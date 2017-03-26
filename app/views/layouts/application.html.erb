@@ -2,13 +2,56 @@
 <html>
   <head>
     <title>AssignmentDanebook</title>
+    
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- link to project css stylesheets -->
+    
+    <link rel="stylesheet" type-"text/css" href="danebook-home.css">
+
+    <!-- link to data-turbolinks-track -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
+
+    <div class="container">
+      <% flash.each do |type, message| %>
+        <div class="flash-notice">
+          <strong/><%= message %></strong>
+        </div>
+      <% end %>
+    </div>
+
+
     <%= yield %>
+
+
+    <br>
+    <%= render 'shared/navbar_links' %>
+
   </body>
 </html>

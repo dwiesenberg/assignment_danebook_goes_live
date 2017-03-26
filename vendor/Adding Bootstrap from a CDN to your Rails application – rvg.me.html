@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/ -->
+<html lang="en-US" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://rvg.me/w/xmlrpc.php">
+		<script async="" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/saved_resource"></script><script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Adding Bootstrap from a CDN to your Rails application – rvg.me</title>
+<link rel="alternate" type="application/rss+xml" title="rvg.me » Feed" href="https://rvg.me/feed/">
+<link rel="alternate" type="application/rss+xml" title="rvg.me » Comments Feed" href="https://rvg.me/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="rvg.me » Adding Bootstrap from a CDN to your Rails application Comments Feed" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/rvg.me\/w\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.3"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="twentysixteen-jetpack-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/twentysixteen.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentysixteen-fonts-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentysixteen-style-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/style.css" type="text/css" media="all">
+<style id="twentysixteen-style-inline-css" type="text/css">
+
+		/* Custom Link Color */
+		.menu-toggle:hover,
+		.menu-toggle:focus,
+		a,
+		.main-navigation a:hover,
+		.main-navigation a:focus,
+		.dropdown-toggle:hover,
+		.dropdown-toggle:focus,
+		.social-navigation a:hover:before,
+		.social-navigation a:focus:before,
+		.post-navigation a:hover .post-title,
+		.post-navigation a:focus .post-title,
+		.tagcloud a:hover,
+		.tagcloud a:focus,
+		.site-branding .site-title a:hover,
+		.site-branding .site-title a:focus,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-footer a:hover,
+		.entry-footer a:focus,
+		.comment-metadata a:hover,
+		.comment-metadata a:focus,
+		.pingback .comment-edit-link:hover,
+		.pingback .comment-edit-link:focus,
+		.comment-reply-link,
+		.comment-reply-link:hover,
+		.comment-reply-link:focus,
+		.required,
+		.site-info a:hover,
+		.site-info a:focus {
+			color: #ab1a2d;
+		}
+
+		mark,
+		ins,
+		button:hover,
+		button:focus,
+		input[type="button"]:hover,
+		input[type="button"]:focus,
+		input[type="reset"]:hover,
+		input[type="reset"]:focus,
+		input[type="submit"]:hover,
+		input[type="submit"]:focus,
+		.pagination .prev:hover,
+		.pagination .prev:focus,
+		.pagination .next:hover,
+		.pagination .next:focus,
+		.widget_calendar tbody a,
+		.page-links a:hover,
+		.page-links a:focus {
+			background-color: #ab1a2d;
+		}
+
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		input[type="url"]:focus,
+		input[type="password"]:focus,
+		input[type="search"]:focus,
+		textarea:focus,
+		.tagcloud a:hover,
+		.tagcloud a:focus,
+		.menu-toggle:hover,
+		.menu-toggle:focus {
+			border-color: #ab1a2d;
+		}
+
+		@media screen and (min-width: 56.875em) {
+			.main-navigation li:hover > a,
+			.main-navigation li.focus > a {
+				color: #ab1a2d;
+			}
+		}
+	
+
+		/* Custom Main Text Color */
+		body,
+		blockquote cite,
+		blockquote small,
+		.main-navigation a,
+		.menu-toggle,
+		.dropdown-toggle,
+		.social-navigation a,
+		.post-navigation a,
+		.pagination a:hover,
+		.pagination a:focus,
+		.widget-title a,
+		.site-branding .site-title a,
+		.entry-title a,
+		.page-links > .page-links-title,
+		.comment-author,
+		.comment-reply-title small a:hover,
+		.comment-reply-title small a:focus {
+			color: #222222
+		}
+
+		blockquote,
+		.menu-toggle.toggled-on,
+		.menu-toggle.toggled-on:hover,
+		.menu-toggle.toggled-on:focus,
+		.post-navigation,
+		.post-navigation div + div,
+		.pagination,
+		.widget,
+		.page-header,
+		.page-links a,
+		.comments-title,
+		.comment-reply-title {
+			border-color: #222222;
+		}
+
+		button,
+		button[disabled]:hover,
+		button[disabled]:focus,
+		input[type="button"],
+		input[type="button"][disabled]:hover,
+		input[type="button"][disabled]:focus,
+		input[type="reset"],
+		input[type="reset"][disabled]:hover,
+		input[type="reset"][disabled]:focus,
+		input[type="submit"],
+		input[type="submit"][disabled]:hover,
+		input[type="submit"][disabled]:focus,
+		.menu-toggle.toggled-on,
+		.menu-toggle.toggled-on:hover,
+		.menu-toggle.toggled-on:focus,
+		.pagination:before,
+		.pagination:after,
+		.pagination .prev,
+		.pagination .next,
+		.page-links a {
+			background-color: #222222;
+		}
+
+		/* Border Color */
+		fieldset,
+		pre,
+		abbr,
+		acronym,
+		table,
+		th,
+		td,
+		input[type="text"],
+		input[type="email"],
+		input[type="url"],
+		input[type="password"],
+		input[type="search"],
+		textarea,
+		.main-navigation li,
+		.main-navigation .primary-menu,
+		.menu-toggle,
+		.dropdown-toggle:after,
+		.social-navigation a,
+		.image-navigation,
+		.comment-navigation,
+		.tagcloud a,
+		.entry-content,
+		.entry-summary,
+		.page-links a,
+		.page-links > span,
+		.comment-list article,
+		.comment-list .pingback,
+		.comment-list .trackback,
+		.comment-reply-link,
+		.no-comments,
+		.widecolumn .mu_register .mu_alert {
+			border-color: #222222; /* Fallback for IE7 and IE8 */
+			border-color: rgba( 34, 34, 34, 0.2);
+		}
+
+		hr,
+		code {
+			background-color: #222222; /* Fallback for IE7 and IE8 */
+			background-color: rgba( 34, 34, 34, 0.2);
+		}
+
+		@media screen and (min-width: 56.875em) {
+			.main-navigation ul ul,
+			.main-navigation ul ul li {
+				border-color: rgba( 34, 34, 34, 0.2);
+			}
+
+			.main-navigation ul ul:before {
+				border-top-color: rgba( 34, 34, 34, 0.2);
+				border-bottom-color: rgba( 34, 34, 34, 0.2);
+			}
+		}
+	
+
+		/* Custom Secondary Text Color */
+
+		/**
+		 * IE8 and earlier will drop any block with CSS3 selectors.
+		 * Do not combine these styles with the next block.
+		 */
+		body:not(.search-results) .entry-summary {
+			color: #333333;
+		}
+
+		blockquote,
+		.post-password-form label,
+		a:hover,
+		a:focus,
+		a:active,
+		.post-navigation .meta-nav,
+		.image-navigation,
+		.comment-navigation,
+		.widget_recent_entries .post-date,
+		.widget_rss .rss-date,
+		.widget_rss cite,
+		.site-description,
+		.author-bio,
+		.entry-footer,
+		.entry-footer a,
+		.sticky-post,
+		.taxonomy-description,
+		.entry-caption,
+		.comment-metadata,
+		.pingback .edit-link,
+		.comment-metadata a,
+		.pingback .comment-edit-link,
+		.comment-form label,
+		.comment-notes,
+		.comment-awaiting-moderation,
+		.logged-in-as,
+		.form-allowed-tags,
+		.site-info,
+		.site-info a,
+		.wp-caption .wp-caption-text,
+		.gallery-caption,
+		.widecolumn label,
+		.widecolumn .mu_register label {
+			color: #333333;
+		}
+
+		.widget_calendar tbody a:hover,
+		.widget_calendar tbody a:focus {
+			background-color: #333333;
+		}
+	
+</style>
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='https://rvg.me/w/wp-content/themes/twentysixteen/css/ie.css?ver=20160412' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='https://rvg.me/w/wp-content/themes/twentysixteen/css/ie8.css?ver=20160412' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='https://rvg.me/w/wp-content/themes/twentysixteen/css/ie7.css?ver=20160412' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="bfa-font-awesome-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="social-logos-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/social-logos.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/jquery.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/related-posts.js"></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://rvg.me/w/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<link rel="https://api.w.org/" href="https://rvg.me/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://rvg.me/w/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://rvg.me/w/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="The NSA: An Inside View" href="https://rvg.me/2013/12/the-nsa-an-inside-view/">
+<link rel="next" title="Error installing Ruby 2.1.0 in rbenv" href="https://rvg.me/2014/01/error-installing-ruby-2-1-0-rbenv/">
+<meta name="generator" content="WordPress 4.5.3">
+<link rel="canonical" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/">
+<link rel="shortlink" href="https://wp.me/p4a12k-1d">
+<link rel="alternate" type="application/json+oembed" href="https://rvg.me/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frvg.me%2F2014%2F01%2Fadding-bootstrap-from-a-cdn-to-your-rails-application%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://rvg.me/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frvg.me%2F2014%2F01%2Fadding-bootstrap-from-a-cdn-to-your-rails-application%2F&amp;format=xml">
+
+	<!--wp code prettify-->
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #333333; }
+</style>
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Adding Bootstrap from a CDN to your Rails application">
+<meta property="og:url" content="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/">
+<meta property="og:description" content="In a previous post, I talked about manually adding Bootstrap 3 files to a new Rails 4 project. What about if we made upgrading easier by loading the files from a CND instead? Then we could choose b…">
+<meta property="article:published_time" content="2014-01-08T18:48:16+00:00">
+<meta property="article:modified_time" content="2014-01-08T19:00:11+00:00">
+<meta property="og:site_name" content="rvg.me">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+
+<style id="custom-css-css">code{font:1rem monospace;line-height:1.75;color:#52595d;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;background-color:#f9f9f9;padding:3px 6px;display:inline-block;margin:0}pre{border:1px solid #cacaca;line-height:1.2em;font:12px monospace;padding:10px;overflow:auto;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;background-color:#FAFAFB;color:#393939;margin:0;white-space:pre-wrap;word-wrap:normal}.socialIcons a,.socialIcons a:hover,.socialIcons a:active{box-shadow:none;padding-right:2%}</style>
+<script type="text/javascript" async="" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/embed.js"></script><script async="" type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/count.js"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/services.css"></head>
+
+<body class="single single-post postid-75 single-format-standard custom-background no-sidebar">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/#content">Skip to content</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="https://rvg.me/" rel="home">rvg.me</a></p>
+									</div><!-- .site-branding -->
+
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-75" class="post-75 post type-post status-publish format-standard hentry category-uncategorized tag-bootstrap tag-ruby-on-rails">
+	<header class="entry-header">
+		<h1 class="entry-title">Adding Bootstrap from a CDN to your Rails application</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>In a <a href="http://rvg.me/2013/11/using-bootstrap-3-with-rails-4/">previous post</a>, I talked about manually adding Bootstrap 3 files to a new Rails 4 project. What about if we made upgrading easier by loading the files from a CND instead? Then we could choose between using the latest version of Bootstrap 3, an earlier release or even Bootstrap 2 by just changing a string in a helper. Sound good? </p>
+<p>Let’s get started by creating a project:</p>
+<pre><code>rails new bootstrap-cdn
+</code></pre>
+<p>Next, created a new file called <code>layout_helper.rb</code> in <code>app/helpers/</code> and populate it with the contents below. I’ve chosen to use the latest version of Bootstrap at the time of writing which was <code>3.0.3</code>.</p>
+<pre><code>module LayoutHelper
+
+  def bootstrap_version
+    # Choose the Bootstrap version you would like to use from the CDN
+    "3.0.3"
+  end
+
+end
+</code></pre>
+<p>Now let’s edit <code>application.html.erb</code> in <code>app/views/layouts</code>. In the head, we want to included the css and just before the closing body tag, we add the javascript. </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Loading Bootstrap from a CDN&lt;/title&gt;
+  &lt;link href="//netdna.bootstrapcdn.com/bootstrap/&lt;%= bootstrap_version %&gt;/css/bootstrap.min.css" rel="stylesheet"&gt;
+  &lt;%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" =&gt; true %&gt;
+  &lt;%= javascript_include_tag "application", "data-turbolinks-track" =&gt; true %&gt;
+  &lt;%= csrf_meta_tags %&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;%= yield %&gt;
+  &lt;/div&gt;
+  &lt;script src="//netdna.bootstrapcdn.com/bootstrap/&lt;%= bootstrap_version %&gt;/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>That’s all it takes to get up and running quickly without a gem. It also happens to be the simplest upgrade method that I can think of for down the road. For those of you looking to expand the application slightly for testing purposes, then read on.</p>
+<p>Open your Gemfile and add <a href="https://github.com/thoughtbot/high_voltage">high_voltage</a>.</p>
+<pre><code>gem 'high_voltage', '~&gt; 2.1.0'
+</code></pre>
+<p>Edit your <code>routes.rb</code> found in <code>config/</code>.</p>
+<pre><code>Rails.application.routes.draw do
+
+  get 'pages/home' =&gt; 'high_voltage/pages#show', id: 'home'
+
+end
+</code></pre>
+<p>For High Voltage to function correctly, we need to create an initializer called <code>high_voltage.rb</code> in the <code>config/initializers/</code> directory and populate it with:</p>
+<pre><code># config/initializers/high_voltage.rb
+HighVoltage.configure do |config|
+  config.home_page = 'home'
+end
+</code></pre>
+<p>In your Terminal, create the home page and directory that we referenced above.</p>
+<pre><code>$ mkdir app/views/pages
+$ touch app/views/pages/home.html.erb
+</code></pre>
+<p>Now let’s get to some fun testing. Open the file <code>home.html.erb</code> in <code>app/views/pages</code>. We’ll create a number of buttons to make sure the Glyphicons are loaded along with a Javascript tooltip. Here’s some code to get you started:</p>
+<pre><code>&lt;h2&gt;Some Glyphicons&lt;/h2&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-lg' ) do %&gt;
+  Star &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-star') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default' ) do %&gt;
+  Star &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-star') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-sm' ) do %&gt;
+  Star &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-star') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-xs' ) do %&gt;
+  Star &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-star') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-lg' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-user') %&gt; User
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-user') %&gt; User
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-sm' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-user') %&gt; User
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-xs' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-user') %&gt; User
+&lt;% end %&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-lg' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-sm' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-default btn-xs' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-lg' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-sm' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-primary btn-xs' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-warning btn-lg' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-warning' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-warning btn-sm' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;%= button_tag(type: 'button', class: 'btn btn-warning btn-xs' ) do %&gt;
+  &lt;%= content_tag(:span, '', class: 'glyphicon glyphicon-align-justify') %&gt;
+&lt;% end %&gt;
+
+&lt;h2&gt;A Javascript Tooltip&lt;/h2&gt;
+
+&lt;%= button_tag('Tooltip on the right', type: 'button', class: 'btn btn-default', id: 'tooltip', data: {toggle: 'tooltip', placement: 'right'}, :'data-original-title' =&gt; 'Tooltip on the right' )%&gt;
+</code></pre>
+<p>One last to do, be sure to edit <code>application.js</code> in <code>app/assets/javascripts</code> so that our tooltip works.</p>
+<pre><code>$(document).ready(function(){
+    $("#tooltip").tooltip();
+});
+</code></pre>
+<p>That’s it and don’t forget to run <code>bundle install</code> at the Terminal. We added a gem to the Gemfile. Enjoy!</p>
+<p>A copy of this application is on Github and you can <a href="https://github.com/rvangeilswyk/articles/tree/master/adding-bootstrap-from-a-cdn-to-your-rails-application">download it here</a>.</p>
+<p>If you have any suggestions or feedback, please let me know in the comments, via <a href="mailto:rvangeilswyk@me.com">email</a> or on <a href="https://twitter.com/_rvg">Twitter</a>.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-75" class="share-twitter sd-button share-icon no-text" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-75" class="share-facebook sd-button share-icon no-text" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span></span><span class="sharing-screen-reader-text">Click to share on Facebook (Opens in new window)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-75" class="share-google-plus-1 sd-button share-icon no-text" href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="19" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://rvg.me/2013/11/adding-a-bootstrap-3-layout-to-a-rails-4-project/" title="Adding a Bootstrap 3 layout to a Rails 4 project
+
+In this article, we are going to build on the project that we started in Using Bootstrap 3 with Rails 4. Outcome Our goal at the end of this article is to have implemented a Bootstrap 3 layout for our Rails 4 project similar to the image below. As you…" rel="nofollow" data-origin="75" data-position="0">Adding a Bootstrap 3 layout to a Rails 4 project</a></span><span class="jp-relatedposts-post-date">November 15, 2013</span><span class="jp-relatedposts-post-context">In "bootstrap"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="23" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://rvg.me/2013/11/using-bootstrap-3-with-rails-4/" title="Using Bootstrap 3 with Rails 4
+
+If you are looking to use Bootstrap 3 with Rails, then this article is for you. It provides a guide to adding Bootstrap 3, aka Twitter Bootstrap 3, to a new Rails 4 project. I found this article from Eric Minkel, however I&#39;ve deviated slightly from his implementation and I…" rel="nofollow" data-origin="75" data-position="1">Using Bootstrap 3 with Rails 4</a></span><span class="jp-relatedposts-post-date">November 8, 2013</span><span class="jp-relatedposts-post-context">In "bootstrap"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="93" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://rvg.me/2014/04/rails-composer/" title="Rails Composer
+
+I recently decided to make the switch to Pundit in a new application and in doing some reading I came across Rails Composer by Daniel Kehoe. You can quickly create 5 starter applications like: Rails with Bootstrap Rails with Foundation Rails with OmniAuth Rails with Devise Rails with Devise and…" rel="nofollow" data-origin="75" data-position="2">Rails Composer</a></span><span class="jp-relatedposts-post-date">April 9, 2014</span><span class="jp-relatedposts-post-context">In "ruby-on-rails"</span></p></div></div>	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt="" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/a0721a4726e088babd8e49a20e703996" srcset="https://secure.gravatar.com/avatar/a0721a4726e088babd8e49a20e703996?s=98&amp;d=mm&amp;r=g 2x" class="avatar avatar-49 photo grav-hashed grav-hijack" height="49" width="49" originals="49" src-orig="https://secure.gravatar.com/avatar/a0721a4726e088babd8e49a20e703996?s=49&amp;d=mm&amp;r=g" scale="2" id="grav-a0721a4726e088babd8e49a20e703996-0"><span class="screen-reader-text">Author </span> <a class="url fn n" href="https://rvg.me/author/rvg-me-admin/">Richard</a></span></span><span class="posted-on"><span class="screen-reader-text">Posted on </span><a href="https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/" rel="bookmark"><time class="entry-date published" datetime="2014-01-08T13:48:16+00:00">January 8, 2014</time><time class="updated" datetime="2014-01-08T14:00:11+00:00">January 8, 2014</time></a></span><span class="tags-links"><span class="screen-reader-text">Tags </span><a href="https://rvg.me/tag/bootstrap/" rel="tag">bootstrap</a>, <a href="https://rvg.me/tag/ruby-on-rails/" rel="tag">ruby-on-rails</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 822px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'https://rvg.me/2014/01/adding-bootstrap-from-a-cdn-to-your-rails-application/';
+var disqus_identifier = '75 http://rvg.me/?p=75';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'rvgme';
+var disqus_title = "Adding Bootstrap from a CDN to your Rails application";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=75';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://rvg.me/2013/12/the-nsa-an-inside-view/" rel="prev"><span class="meta-nav" aria-hidden="true">Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">The NSA: An Inside View</span></a></div><div class="nav-next"><a href="https://rvg.me/2014/01/error-installing-ruby-2-1-0-rbenv/" rel="next"><span class="meta-nav" aria-hidden="true">Next</span> <span class="screen-reader-text">Next post:</span> <span class="post-title">Error installing Ruby 2.1.0 in rbenv</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	<aside id="content-bottom-widgets" class="content-bottom-widgets" role="complementary">
+			<div class="widget-area">
+			<section id="text-3" class="widget widget_text">			<div class="textwidget">Copyright © Richard van Geilswyk<br>Powered by <a href="https://wordpress.org/" rel="nofollow">WordPress</a> • Hosted with <a href="https://www.digitalocean.com/?refcode=372b07eaa024" rel="nofollow">Digital Ocean</a>.</div>
+		</section>		</div><!-- .widget-area -->
+	
+	</aside><!-- .content-bottom-widgets -->
+
+</div><!-- .content-area -->
+
+
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="https://rvg.me/" rel="home">rvg.me</a></span>
+				<a href="https://wordpress.org/">Proudly powered by WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'rvgme';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        	<div style="display:none">
+	<div class="grofile-hash-map-a0721a4726e088babd8e49a20e703996">
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/rvg.me\/2014\/01\/adding-bootstrap-from-a-cdn-to-your-rails-application\/":75};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/photon.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/jquery.form.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/rvg.me\/w\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/scripts.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/wpgroho.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/comment-reply.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/functions.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/wp-embed.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/sharing.js"></script>
+<script type="text/javascript" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/e-201629.js" async="" defer=""></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.1.1',blog:'61492612',post:'75',tz:'-4',srv:'rvg.me'} ]);
+	_stq.push([ 'clickTrackerInit', '61492612', '75' ]);
+</script>
+
+
+
+<!-- Dynamic page generated in 0.273 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-07-22 15:09:58 -->
+
+<!-- Compression = gzip --><img src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/g.gif" alt=":)" width="6" height="5" id="wpstats" scale="0"><iframe style="display: none;" src="./Adding Bootstrap from a CDN to your Rails application – rvg.me_files/saved_resource(1).html"></iframe></body></html>

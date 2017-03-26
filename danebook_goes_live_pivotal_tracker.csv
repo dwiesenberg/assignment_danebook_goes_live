@@ -1,0 +1,27 @@
+Id,Title,Labels,Iteration,Iteration Start,Iteration End,Type,Estimate,Current State,Created at,Accepted at,Deadline,Requested By,Description,URL,Owned By,Task,Task Status,Task,Task Status,Task,Task Status,Task,Task Status
+78776930,"Hello, world!",home_page,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"Let's get started with a simple ""Hello, world!"" page to make sure everything's working properly",https://www.pivotaltracker.com/story/show/78776930,,The root route goes to the `home` action of the `static_pages_controller`,not completed,"The root route displays a simple ""Hello, world!"" H1",not completed
+78776938,Homepage renders properly,home_page,,,,feature,1,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a visitor to Danebook
+I want to land on a branded home page
+So I know where I am",https://www.pivotaltracker.com/story/show/78776938,,The Home Page HTML markup is contained in the proper `app/views/static_pages/home.html.erb` file,not completed,Twitter Bootstrap's CDNs are linked to from the application layout in the HEAD tags,not completed,Note: Play with whether to include these above or below the Rails stylesheets.  What happens?,not completed,The styles from your Home Page are properly located in the `app/assets/static_pages.css.scss` file,not completed
+78776990,Refactor: Navbar to Partial,home_page,,,,chore,,unstarted,"Sep 14, 2014",,,Erik Trautman,Refactor the navbar so it's actually a shared partial linked to from the main application layout,https://www.pivotaltracker.com/story/show/78776990,,The navbar is rendered as a partial via the layout,not completed
+78777034,Timeline Page,static_pages,,,,feature,1,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a visitor to Danebook viewing a user's page,
+I want to view that user's Timeline
+So I can see what he or she has been up to",https://www.pivotaltracker.com/story/show/78777034,,The /timeline route serves the StaticPagesController `timeline` action,not completed,The markup for the timeline is properly stored and rendered from the `app/views/static_pages/timeline.html.erb` view,not completed,The CSS for the timeline is included in the `static_pages.css.scss` file but is well namespaced so it doesn't conflict with the `homepage` styles.,not completed
+78777048,Friends Page,static_pages,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a visitor to a user's page
+I want to view their friends
+So I can see if I know any of them",https://www.pivotaltracker.com/story/show/78777048,,/friends renders `static_pages#friends`,not completed,Styles are properly namespaced,not completed
+78777042,About Page,static_pages,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a visitor to a user's page
+I want to see their personal information
+So I can get to know them or send them unsolicited emails",https://www.pivotaltracker.com/story/show/78777042,,The /about route renders `static_pages#about`,not completed,Styles for the About page are properly namespaced within the Static_pages.css.scss file,not completed
+78777054,Photos Page,static_pages,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a visitor to a user's page
+I want to view their photos
+So I can see where they've been",https://www.pivotaltracker.com/story/show/78777054,,"/photos renders `static_pages#photos`
+",not completed,styles are properly namespaced,not completed
+78777156,Wire up the Navbar,static_pages,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a user who is logged in
+I want to see my name displayed in the navbar instead of a login form
+Because there's no reason for me to login if I'm logged in.",https://www.pivotaltracker.com/story/show/78777156,,The navbar renders as the sign-in form only on the Home page,not completed,The navbar otherwise contains our example user's name (as in the mockup),not completed
+78777172,About (Edit) Page,static_pages,,,,feature,0,unstarted,"Sep 14, 2014",,,Erik Trautman,"As a user who is logged in and viewing my account
+I want to be able to edit my information
+Because it might change",https://www.pivotaltracker.com/story/show/78777172,,/about_edit renders `static_pages#about_edit`,not completed,The navbar properly shows my name on this screen,not completed
+78777344,Navigation Links,static_pages,,,,chore,,unstarted,"Sep 14, 2014",,,Erik Trautman,Make sure the navigation links on the middle navbar are properly wired up to jump between pages,https://www.pivotaltracker.com/story/show/78777344,,All links should be served using the proper `link_to` helper with a `*_path` method,not completed,All links that can be activated should be,not completed
+78777484,Refactoring,static_pages,,,,chore,,unstarted,"Sep 14, 2014",,,Erik Trautman,"Refactor everything you can.  You'll be using this application a LOT in the future, so make sure your CSS looks properly namespaced and your HTML is broken into whatever partials you can.",https://www.pivotaltracker.com/story/show/78777484,,Refactor the CSS so you're happy living with it,not completed,Refactor your HTML into partials where possible,not completed
