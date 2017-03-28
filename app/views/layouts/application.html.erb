@@ -26,7 +26,7 @@
 
     <!-- link to project css stylesheets -->
     
-    <link rel="stylesheet" type-"text/css" href="danebook-home.css">
+       <!-- don't include call to css file ... it's called automatically by RAILS through stylesheet_link_tag below ... if called here, it will cause errors -->
 
     <!-- link to data-turbolinks-track -->
 
@@ -38,6 +38,14 @@
   <body>
 
 
+    <%= yield %>
+
+
+    <br>
+    <%= render 'shared/navbar_footer_links' %>
+    <br>
+
+
     <div class="container">
       <% flash.each do |type, message| %>
         <div class="flash-notice">
@@ -46,12 +54,6 @@
       <% end %>
     </div>
 
-
-    <%= yield %>
-
-
-    <br>
-    <%= render 'shared/navbar_footer_links' %>
 
   </body>
 </html>
